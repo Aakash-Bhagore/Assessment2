@@ -27,13 +27,13 @@ public class AdminLoginController extends HttpServlet {
 	      String uname=request.getParameter("email");
 	      String pass=request.getParameter("psw");
 	      
-	      AdminLoginBean bean=new AdminLoginBean();
+	      AdminLoginBean adminLoginBean=new AdminLoginBean();
 	      AdminLoginDao dao=new AdminLoginDao();
 	      
-	      bean.setEmail(uname);
-	      bean.setPassword(pass);
+	      adminLoginBean.setEmail(uname);
+	      adminLoginBean.setPassword(pass);
 	      
-	      if(dao.vaildate(bean))
+	      if(dao.vaildate(adminLoginBean))
 	      {
 	        response.sendRedirect("AdminPanel.jsp");
 	      }
